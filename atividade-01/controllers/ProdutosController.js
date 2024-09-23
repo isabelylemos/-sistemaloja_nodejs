@@ -1,5 +1,5 @@
-import express from "express"
-const router =express.Router() 
+import express from "express";
+const router =express.Router(); 
 
 // rota produtos
 router.get("/produtos", (req, res) => {
@@ -14,7 +14,7 @@ router.get("/produtos", (req, res) => {
     ];
   
     res.render("produtos", {
-      listaProdutos: listaProdutos,
+      listaProdutos: listaProdutos
     });
   });
 

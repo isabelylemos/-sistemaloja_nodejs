@@ -1,5 +1,5 @@
-import express from "express"
-const router = express.Router()
+import express from "express";
+const router = express.Router();
 
 // rota pedidos
 router.get("/pedidos", (req, res) => {
@@ -16,7 +16,7 @@ router.get("/pedidos", (req, res) => {
   
     res.render("pedidos", {
       listaPedidos : listaPedidos
-    })
+    });
   });
 
   export default router
