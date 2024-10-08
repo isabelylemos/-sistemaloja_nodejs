@@ -10,5 +10,8 @@ router.get("/clientes", (req, res) => {
       })
     }))
 });
-  
+
+// rota cadastro
+
+
   export default router

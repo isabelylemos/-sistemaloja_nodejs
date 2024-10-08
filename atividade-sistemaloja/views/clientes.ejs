@@ -1,6 +1,30 @@
 <%- include ('partials/navbar.ejs') %>
 <%- include ('partials/header.ejs') %>
 
+<div class="container">
+  <div class="card">
+    <card-header>
+      <p class="msg">Cadastrar clientes</p>
+    </card-header>
+
+    <div class="card-body">
+      <form action="/clientes/new" method="post">
+        <label>Nome do cliente</label>
+        <input type="text" name="nome" id="nome" placeholder="Insira o nome do cliente" class="form-control" required>
+
+        <label>CPF do cliente</label>
+        <input type="text" name="cpf" id="CPF" placeholder="Insira o cpf do cliente" class="form-control" required>
+
+        <label>Endereço do cliente</label>
+        <input type="text" name="endereco" id="endereco" placeholder="Insira o endereco do cliente" class="form-control" required>
+        <br>
+        <input type="submit" class="btn btn-success" value="Cadastrar">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
 <p class="msg">Clientes destaques do mês!</p>
 <div class="linha"></div>
 
@@ -10,6 +34,7 @@
         <th scope="col">Nome</th>
         <th scope="col">CPF</th>
         <th scope="col">Endereço</th>
+        <th colspan="2">Ações:</th>
       </tr>
     </thead>
     <% cliente.forEach((cliente)=>{ %>
@@ -18,9 +43,12 @@
         <td><%= cliente.nome %></td>
         <td><%= cliente.cpf %></td>
         <td><%= cliente.endereco %></td>
+        <td><a style="color: orange;" href="/clientes/edit/<%= cliente.id %>">Editar</a></td>
+        <td><a style="color: red;" href="/clientes/delet/<%= cliente.id %>">Deletar</a></td>
       </tr>
     <% }) %>
     </tbody>
   </table>
+</div>
 <%- include ('partials/footer.ejs') %>
 
