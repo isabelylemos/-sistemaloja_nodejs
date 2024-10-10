@@ -68,7 +68,7 @@ img{
 
 .tamform{
     margin-top: 70px;   
-    margin-bottom: 90px;
+    margin-bottom: 110px;
     margin-left: 680px;
     width: 400px;
 }
@@ -105,10 +105,34 @@ footer{
 }
 
 table.table{
-    width: 500px;
-    margin-left: 700px;
+    width: 700px;
+    margin-left: 600px;
     margin-top: 70px;
     margin-bottom: 100px;
     border-color: black;
 }
 
+#table-clientes{
+    width: 700px;
+    margin-left: 300px;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    border-color: black;
+}
+
+.card{
+    margin-top: 50px;
+    padding: 20px;
+}
+
+#card-edit{
+    margin-bottom: 120px;
+    margin-top: 98px;
+}
+
+.msg-card{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    font-weight: bold;
+}

@@ -4,7 +4,7 @@ import connection from "../config/sequelize-config.js"
 const cliente = connection.define('clientes',{
    nome: {
     type: sequelize.STRING,
-    allownull: false
+    allowNull: false
    },
    cpf: {
     type: sequelize.STRING,
