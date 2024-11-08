@@ -1,9 +1,10 @@
 import express from "express";
 const router = express.Router();
 import cliente from "../models/Clientes.js";
+import Auth from "../middleware/Auth.js"
 
 // rota clientes
-router.get("/clientes", (req, res) => {
+router.get("/clientes",Auth, (req, res) => {
   cliente.findAll().then((cliente) => {
     res.render("clientes", {
       cliente: cliente,
@@ -12,7 +13,7 @@ router.get("/clientes", (req, res) => {
 });
 
 // rota cadastro
-router.post("/clientes/new", (req, res) => {
+router.post("/clientes/new",Auth, (req, res) => {
   const nome = req.body.nome;
   const cpf = req.body.cpf;
   const endereco = req.body.endereco;
@@ -31,7 +32,7 @@ router.post("/clientes/new", (req, res) => {
 });
 
 //rota exclusão
-router.get("/clientes/delet/:id", (req, res) => {
+router.get("/clientes/delet/:id",Auth, (req, res) => {
   const id = req.params.id;
   cliente
     .destroy({
@@ -48,7 +49,7 @@ router.get("/clientes/delet/:id", (req, res) => {
 });
 
 // rota edição
-router.get("/clientes/edit/:id", (req, res) => {
+router.get("/clientes/edit/:id",Auth, (req, res) => {
     const id = req.params.id;
     cliente.findByPk(id).then((cliente) => {
       res.render("clienteEdit", {
@@ -60,7 +61,7 @@ router.get("/clientes/edit/:id", (req, res) => {
 });
 
 //rota alteração
-router.post("/clientes/update", (req,res) => {
+router.post("/clientes/update",Auth, (req,res) => {
   const id = req.body.id
   const nome = req.body.nome
   const cpf = req.body.cpf
